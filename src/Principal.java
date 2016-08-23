@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,16 +39,53 @@ public class Principal extends javax.swing.JFrame {
         cmdCalcular = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel1.setText("Cantidad de palabras del aviso");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 59, 178, 23));
 
         jLabel2.setText(" Tamaño en Centímetros");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 100, 178, 22));
 
         jLabel3.setText("Numero de colores");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 141, 178, 23));
+
+        txtWord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtWordActionPerformed(evt);
+            }
+        });
+        txtWord.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtWordKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 59, 90, 23));
+
+        txtN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNActionPerformed(evt);
+            }
+        });
+        txtN.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtN, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 100, 90, 23));
+
+        txtColor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtColorKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 141, 90, 23));
 
         cmdCalcular.setText("Calcular");
         cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -53,59 +93,21 @@ public class Principal extends javax.swing.JFrame {
                 cmdCalcularActionPerformed(evt);
             }
         });
+        getContentPane().add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 180, 86, -1));
 
         jLabel4.setText("Monto Total a pagar");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 214, -1, 23));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cmdCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtWord)
-                            .addComponent(txtN, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(txtColor, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(txtTotal))))
-                .addContainerGap(120, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtWord, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addComponent(cmdCalcular)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 60, Short.MAX_VALUE))
-        );
+        txtTotal.setEditable(false);
+        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 214, 90, 23));
+
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,6 +116,17 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         String Mon;
         double words, n, color, monto, mult1, mult2, mult3;
+        
+        if (txtWord.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite por favor la cantidad de palabras", "Error", JOptionPane.ERROR_MESSAGE);
+            txtWord.requestFocusInWindow();
+        } else if (txtN.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite por favor tamaño en centimetros", "Error", JOptionPane.ERROR_MESSAGE);
+            txtN.requestFocusInWindow();
+        }   else if (txtColor.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite por favor el numero de colores", "Error", JOptionPane.ERROR_MESSAGE);
+            txtColor.requestFocusInWindow();
+        } else {
         
         words = Double.parseDouble(txtWord.getText());
         n     = Double.parseDouble(txtN.getText());
@@ -126,9 +139,53 @@ public class Principal extends javax.swing.JFrame {
         
         Mon = String.valueOf(monto);
         txtTotal.setText(Mon);
-                
+        }        
 
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        // TODO add your handling code here:
+        txtColor.setText("");
+        txtN.setText("");
+        txtTotal.setText("");
+        txtWord.setText("");
+        
+    }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtWordActionPerformed
+
+    private void txtNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNActionPerformed
+
+    private void txtWordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWordKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+         if (!Character.isDigit(c)) {
+              getToolkit().beep();
+              evt.consume();
+         }
+    }//GEN-LAST:event_txtWordKeyTyped
+
+    private void txtNKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+         if (!Character.isDigit(c)) {
+              getToolkit().beep();
+              evt.consume();
+         }
+    }//GEN-LAST:event_txtNKeyTyped
+
+    private void txtColorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+         if (!Character.isDigit(c)) {
+              getToolkit().beep();
+              evt.consume();
+         }
+    }//GEN-LAST:event_txtColorKeyTyped
 
     /**
      * @param args the command line arguments
@@ -166,6 +223,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
     private javax.swing.JButton cmdCalcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
